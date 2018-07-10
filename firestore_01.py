@@ -8,18 +8,19 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
-myCertificate = 'json檔案路徑'
+#json檔案路徑
+myCertificate = 'xxx.json'
 
 def uploadToFirestore():
     print ('=====START=====')
     dataString = 'Some data'
     print('Data: ' + dataString)
-    #
-    firestore_ref = db.collection('recordsOfData').document()
+    #取得節點
+    firestoreRef = db.collection('recordsOfData').document()
     t = time.time()
     date = datetime.datetime.fromtimestamp(t).strftime("%Y-%m-%d-%H-%M-%S")
     #
-    firestore_ref.set({'datatime': date, 'content': dataString})
+    firestoreRef.set({'datatime': date, 'content': dataString})
     #
     #threading.Timer(5,uploadToFirestore).start()
 
@@ -46,5 +47,3 @@ if __name__ == "__main__":
         #
         uploadToFirestore()
         time.sleep(5)
-
-        
