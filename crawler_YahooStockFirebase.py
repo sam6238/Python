@@ -12,10 +12,9 @@ from firebase_admin import db
 
 # initial firebase
 # firebase認證->在控制台->帳戶服務->可以複製來貼上
-cred = credentials.Certificate(
-    '/Users/chungchuhsiao/CloudStation/00_巨匠課程/00_Python/crawler/raspberry-6b327-firebase-adminsdk-nsauf-cdd72dbe78.json')
+cred = credentials.Certificate(xxxxxx.json')
 firebase_admin.initialize_app(
-    cred, {'databaseURL': 'https://raspberry-6b327.firebaseio.com/'})
+    cred, {'databaseURL': 'https://xxxxxxxxxx.firebaseio.com/'})
 #refData = db.reference('raspberrypi/YahooStock')
 refData = db.reference('raspberrypi/YahooNews')
 
